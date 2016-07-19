@@ -1,0 +1,31 @@
+{
+  "mail": {
+    "protocol": "smtp",
+    "username": "smalttestings@gmail.com",
+    "password": "",
+    "server": "smtp.gmail.com",
+    "port": "465"
+  },
+  "contact": {
+    "sendFrom": "Overlord <smalttestings@gmail.com>",
+    "sendTo": "contact@smaltcreation.com"
+  },
+  "googleMapsApi": "",
+  "default": {
+    "admins": [
+      {
+        "email": "admin@smaltcreation.com",
+        "password": "admin!",
+        "profile": {
+          "firstName": "Nicolas",
+          "lastName": "Rouvière"
+        }
+      }
+    ]
+  },
+  "public": {
+    "project": {
+      "name": "Overlord"
+    }
+  }
+}
