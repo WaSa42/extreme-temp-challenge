@@ -1,25 +1,32 @@
 <head>
-  <title>lastest</title>
+  <title>Extreme Temp Challenge - Explore your phone's limits</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <header class="jumbotron">
+      <div class="container text-center">
+          <h1>Extreme Temp Challenge</h1>
+          <p>
+               <strong>XTC</strong> is an app exploring the temperature limits of your <i class="fa fa-mobile-phone"></i><br>
+              Can it be the <strong>hottest or coldest</strong> still working device ?
+          </p>
+          <p>
+              <a href="#">
+                  <img class="google-play-badge" src="images/google-play-badge.png">
+              </a>
+          </p>
+      </div>
+  </header>
+  <div class="row">
+      <div class="col-sm-8">
+          {{> leaderBoard}}
+      </div>
+      <div class="col-sm-4">
 
-  {{> hello}}
-  {{> info}}
+      </div>
+  </div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
+<template name="leaderBoard">
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
 </template>
