@@ -11,17 +11,10 @@ TabularTables.Attempts = new Tabular.Table({
         data: 'user',
         title: 'Player'
     }, {
-        data: 'temperature()',
-        title: 'Temperature'
+        data: 'temperature',
+        title: 'Temperature° C'
     }],
-    extraFields: ['temperature'],
     order: [[1, "desc"]],
     responsive: true,
     autoWidth: false
-});
-
-Attempts.helpers({
-    temperature: function () {
-        return this.temperature + '° C';
-    }
 });
