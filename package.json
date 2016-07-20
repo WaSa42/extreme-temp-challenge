@@ -1,5 +1,5 @@
 {
-  "name": "overlord",
+  "name": "Extreme Temp Challenge",
   "private": true,
   "scripts": {
     "start": "meteor run"
