@@ -11,22 +11,13 @@
               Can it be the <strong>hottest or coldest</strong> still working device ?
           </p>
           <p>
-              <a href="#">
+              <a href="#" target="_blank">
                   <img class="google-play-badge" src="images/google-play-badge.png">
               </a>
           </p>
       </div>
   </header>
-  <div class="row">
-      <div class="col-sm-8">
-          {{> leaderBoard}}
-      </div>
-      <div class="col-sm-4">
-
-      </div>
+  <div class="container">
+      {{> tabular table=TabularTables.HottestAttempts class="table table-striped table-bordered table-condensed"}}
   </div>
 </body>
-
-<template name="leaderBoard">
-
-</template>

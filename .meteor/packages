@@ -19,3 +19,8 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 twbs:bootstrap@=4.0.0-alpha.2
 fortawesome:fontawesome
+nimble:restivus
+check
+aldeed:tabular
+dburles:collection-helpers
+session
