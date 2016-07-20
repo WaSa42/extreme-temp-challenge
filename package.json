@@ -1,5 +1,5 @@
 {
-  "name": "Extreme Temp Challenge",
+  "name": "extreme-temp-challenge",
   "private": true,
   "scripts": {
     "start": "meteor run"
