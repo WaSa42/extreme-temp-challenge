@@ -12,7 +12,7 @@ TabularTables.Attempts = new Tabular.Table({
         title: 'Player'
     }, {
         data: 'temperature',
-        title: 'Temperature° C'
+        title: 'Temperature°C'
     }],
     order: [[1, "desc"]],
     responsive: true,

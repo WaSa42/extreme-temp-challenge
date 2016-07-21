@@ -11,10 +11,13 @@ Api.addCollection(Attempts, {
     endpoints: {
         post: {
             action: function () {
-                check(this.bodyParams.user, String);
-                check(this.bodyParams.temperature, String);
+                const doc = this;
+                //const doc = CryptoJS.AES.decrypt(this, Meteor.Setting.passPhrase);
+                
+                check(doc.bodyParams.user, String);
+                check(doc.bodyParams.temperature, String);
 
-                if (Attempts.insert(_.extend(this.bodyParams, {createdAt: new Date()}))) {
+                if (Attempts.insert(_.extend(doc.bodyParams, {createdAt: new Date()}))) {
                     return {status: 'success', data: {message: 'Attempt inserted'}};
                 }
 
