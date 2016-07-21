@@ -11,20 +11,26 @@ Api.addCollection(Attempts, {
     endpoints: {
         post: {
             action: function () {
-                const doc = this;
-                //const doc = CryptoJS.AES.decrypt(this, Meteor.Setting.passPhrase);
-                
-                check(doc.bodyParams.user, String);
-                check(doc.bodyParams.temperature, String);
+                try {
+                    const request = this;
+                    //const request = CryptoJS.AES.decrypt(this, Meteor.Setting.passPhrase);
 
-                if (Attempts.insert(_.extend(doc.bodyParams, {createdAt: new Date()}))) {
+                    console.log(request.bodyParams);
+                    
+                    check(request.bodyParams.user, String);
+                    check(request.bodyParams.temperature, String);
+
+                    request.bodyParams.temperature = parseInt(request.bodyParams.temperature);
+                    
+                    Attempts.insert(_.extend(request.bodyParams, {createdAt: new Date()}));
+
                     return {status: 'success', data: {message: 'Attempt inserted'}};
+                } catch (e) {
+                    return {
+                        statusCode: 400,
+                        body: {status: 'fail', message: e.reason}
+                    };
                 }
-
-                return {
-                    statusCode: 400,
-                    body: {status: 'fail', message: 'Bad request'}
-                };
             }
         }
     }
