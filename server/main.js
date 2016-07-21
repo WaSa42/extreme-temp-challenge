@@ -20,6 +20,9 @@ Api.addCollection(Attempts, {
                     check(request.bodyParams.user, String);
                     check(request.bodyParams.temperature, String);
 
+                    if (request.bodyParams.user.length > 30)
+                        throw new Meteor.Error('bad-request', 'Username must have 30 char max');
+
                     request.bodyParams.temperature = parseInt(request.bodyParams.temperature);
                     
                     Attempts.insert(_.extend(request.bodyParams, {createdAt: new Date()}));
