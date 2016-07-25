@@ -15,18 +15,34 @@ Api.addCollection(Attempts, {
                     check(this.bodyParams.user, String);
                     check(this.bodyParams.temperature, String);
 
-                    if (this.bodyParams.user.length > 30)
+                    if (this.bodyParams.user.length > 30) {
                         throw new Meteor.Error('bad-request', 'Username must have 30 char max');
+                    }
 
                     this.bodyParams.temperature = parseInt(this.bodyParams.temperature);
-                    
-                    Attempts.insert(_.extend(this.bodyParams, {createdAt: new Date()}));
 
-                    return {status: 'success', data: {message: 'Attempt inserted'}};
+                    const attempt = Attempts.findOne({
+                        user: this.bodyParams.user,
+                        temperature: this.bodyParams.temperature
+                    });
+
+                    if (!attempt) {
+                        Attempts.insert(_.extend(this.bodyParams, {createdAt: new Date()}));
+                    }
+
+                    return {
+                        status: 'success',
+                        data: {
+                            message: 'Attempt inserted'
+                        }
+                    };
                 } catch (e) {
                     return {
                         statusCode: 400,
-                        body: {status: 'fail', message: e.reason}
+                        body: {
+                            status: 'fail',
+                            message: e.reason
+                        }
                     };
                 }
             }
